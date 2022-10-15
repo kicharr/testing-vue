@@ -10,6 +10,7 @@ import TheSecond from "@/pages/Chapter1/TheSecond";
 import TheThird from "@/pages/Chapter1/TheThird";
 import TheFirst2 from "@/pages/Chapter2/TheFirst2";
 import TheSecond2 from "@/pages/Chapter2/TheSecond2";
+import TheFirst3 from "@/pages/Chapter3/TheFirst3";
 
 
 
@@ -60,6 +61,11 @@ const routes = [
 		path:'/2.2',
 		name:'2.2',
 		component: TheSecond2
+	},
+	{
+		path:'/3.1',
+		name:'3.1',
+		component: TheFirst3
 	}
 
 

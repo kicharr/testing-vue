@@ -36,6 +36,7 @@
         </li>
       </ul>
     </div>
+
   </div>
 </template>
 
@@ -44,6 +45,14 @@ export default {
   name: "TheSecond2",
   data() {
     return {
+      sortParam:'',
+      newPhones: [
+        {title:'iPhone 12', company:'Apple', price: 65000},
+        {title:'Galaxy S20', company:'Samsung', price: 63000},
+        {title:'Galaxy A10', company:'Samsung', price: 38000},
+        {title:'iPhone 10', company:'Apple', price: 45000},
+        {title:'Xiaomi Redmi 8', company:'Xiaomi', price: 42000}
+      ],
       newUser: '',
       company:'',
       users: [
@@ -84,7 +93,7 @@ export default {
     },
   },
   computed: {
-    visibleList(){
+    visibleList() {
       return this.phones.slice(this.start,this.end)
     },
     filteredList() {
@@ -93,7 +102,7 @@ export default {
         if(comp==='') return true;
         else return elem.company.indexOf(comp) > -1;
       })
-    }
+    },
   }
 }
 </script>
