@@ -11,7 +11,7 @@ import TheThird from "@/pages/Chapter1/TheThird";
 import TheFirst2 from "@/pages/Chapter2/TheFirst2";
 import TheSecond2 from "@/pages/Chapter2/TheSecond2";
 import TheFirst3 from "@/pages/Chapter3/TheFirst3";
-
+import TheSecond3 from "@/pages/Chapter3/TheSecond3";
 
 
 
@@ -66,9 +66,12 @@ const routes = [
 		path:'/3.1',
 		name:'3.1',
 		component: TheFirst3
+	},
+	{
+		path:'/3.2',
+		name:'3.2',
+		component: TheSecond3
 	}
-
-
 ];
 
 // creating Vue-Router instance with normal history mode

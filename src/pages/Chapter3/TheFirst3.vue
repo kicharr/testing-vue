@@ -60,6 +60,22 @@
         </ul>
       </div>
 
+      <template>
+        <input type="radio" v-bind:value="user" v-model="selectedUsers">
+        <label>{{ user.name }}</label><br>
+      </template>
+      <span v-if="selectedUsers === null">Выбрано: {{selectedUsers.name}} - {{selectedUsers.age}}</span>
+      <hr>
+      <input type="radio" v-bind:value="{name:'Tom', age:22}" v-model="user">
+      <label>Tom</label>
+      <br>
+      <input type="radio" v-bind:value="{name:'Bob', age:25}" v-model="user">
+      <label>Bob</label>
+      <br>
+      <input type="radio" v-bind:value="{name:'Sam', age:28}" v-model="user">
+      <label>Sam</label>
+      <br>
+      <span>Выбрано: {{user.name}} - {{user.age}}</span>
     </div>
   </div>
 </template>
@@ -69,6 +85,7 @@ export default {
   name: "TheFirst3",
   data() {
     return {
+      user:'',
       login: '',
       password: '',
       date: '',
