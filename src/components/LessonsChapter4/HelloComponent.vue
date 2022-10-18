@@ -1,8 +1,7 @@
 <template>
   <div class="wrapper">
     <h2>{{header}}</h2>
-    <hr>
-    <div>
+    <div class="counter-wrapper">
       <button v-on:click="increase">+</button>
       <h2>{{counter}}</h2>
     </div>
@@ -32,6 +31,18 @@ export default {
 
 <style scoped>
 .wrapper {
+  display: flex;
   margin: 0 auto;
+  border: 1px solid;
+  padding: 15px
+}
+.counter-wrapper {
+  display: flex;
+  gap: 15px;
+  flex-direction: row;
+  align-items: center;
+}
+.counter-wrapper h2 {
+  margin: 0;
 }
 </style>
