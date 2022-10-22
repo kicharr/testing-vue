@@ -18,9 +18,13 @@
         <input if="secondName" type="text" v-model.lazy="secondName"/><br>
 
         <label for="age">Set your age: </label><br>
-        <input id="age" type="number" v-model.lazy="age"/><br>
+        <input id="age" type="number" v-model="age"/><br>
 
         <ComplexObj v-bind:name="name" :age="age" :secondName="secondName"/>
+      </div>
+
+      <div class="lesson lesson15">
+        <usersList :users="users"></usersList>
       </div>
     </div>
   </div>
@@ -32,21 +36,37 @@ import PropsLesson from "@/components/LessonsChapter4/PropsLesson";
 import HelloComponent from "@/components/LessonsChapter4/HelloComponent";
 import DinamicPropertis from "@/components/LessonsChapter4/DinamicPropertis";
 import ComplexObj from "@/components/LessonsChapter4/ComplexObj";
+import usersList from "@/components/LessonsChapter4/UsersList";
 
 export default {
   components: {
     HelloComponent,
     PropsLesson,
     DinamicPropertis,
-    ComplexObj
+    ComplexObj,
+    usersList
   },
   name: "TheFirst4",
   data() {
     return {
       welcome: '',
       name: '',
-      secondName:'',
+      secondName: '',
       age: 18,
+      users: [
+        {
+          name: 'Tom',
+          age: 19,
+        },
+        {
+          name: 'Bob',
+          age: 20,
+        },
+        {
+          name: 'Alice',
+          age: 23
+        }
+      ]
     }
   },
 }
@@ -70,6 +90,7 @@ export default {
   padding: 50px;
   margin: 5px 0;
 }
+
 .lesson14 {
   display: inline-block;
 }

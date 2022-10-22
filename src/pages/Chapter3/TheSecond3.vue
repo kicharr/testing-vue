@@ -11,7 +11,9 @@
       <hr>
       <div>
         <select v-model="selectedUser">
-          <option v-for="user in users" :key="user.id" v-bind:value="user">{{user.name}}</option>
+          <option v-for="user in users"
+                  :key="user.id"
+                    v-bind:value="user">{{user.name}}</option>
         </select>
         <span>Выбрано: {{selectedUser.name}} - {{selectedUser.age}}</span>
       </div>
