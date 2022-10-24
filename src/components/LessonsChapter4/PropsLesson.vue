@@ -1,34 +1,23 @@
 <template>
-  <div class="lesson lesson 15">
-    <h2>{{message}}</h2>
-    <h3>{{secondMessage}}</h3>
+  <div class="wrapper">
+    <input :value="name" type="text" @change="e=>$emit('changeUserName',e)">
+    <input :value="age" type="text" @blur="e=>$emit('changeUserAge',e)" >
+  </div>
+  <div>
+
   </div>
 </template>
 
 <script>
 export default {
   name: "PropsLesson",
-  message: 'hello',
-  props: ['message'],
-  data() {
-    return{
-      secondMessage: 'test second message',
-      welcome: '',
-    }
-  }
+  props:[
+      'name',
+      'age'
+  ]
 }
 </script>
 
 <style scoped>
-.wrapper {
-  margin: 0 auto;
-  border: 1px solid;
-  padding: 15px
-}
-.lesson {
-  width: 100%;
-  border: 1px solid;
-  padding: 50px;
-  margin: 5px 0;
-}
+
 </style>
