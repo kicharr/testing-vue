@@ -19,7 +19,8 @@ export default {
       user: {
         name: '',
         age: ''
-      }
+      },
+
     }
   },
   methods: {
@@ -27,6 +28,7 @@ export default {
       // eslint-disable-next-line vue/no-mutating-props
       this.users.push({name: this.user.name, age: this.user.age});
     },
+
   }
 }
 </script>

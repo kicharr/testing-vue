@@ -15,6 +15,9 @@ import TheSecond3 from "@/pages/Chapter3/TheSecond3";
 import TheFirst4 from "@/pages/Chapter4/TheFirst4";
 import TheSecond4 from "@/pages/Chapter4/TheSecond4";
 import TheThird4 from "@/pages/Chapter4/TheThird4";
+import TheFourth4 from "@/pages/Chapter4/TheFourth4";
+import TheFirst5 from "@/pages/Chapter5/TheFirst5";
+import TheSecond5 from "@/pages/Chapter5/TheSecond5";
 
 
 
@@ -89,6 +92,21 @@ const routes = [
 		path: '/4.3',
 		name:'4.3',
 		component: TheThird4
+	},
+	{
+		path:'/4.4',
+		name: '4.4',
+		component: TheFourth4
+	},
+	{
+		path:'/5.1',
+		name:'5.1',
+		component: TheFirst5
+	},
+	{
+		path:'/5.2',
+		name:'5.2',
+		component: TheSecond5
 	}
 ];
 

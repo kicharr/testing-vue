@@ -3,17 +3,21 @@
     <div class="lesson lesson15">
       <div style="text-align: center;">
         <h2>Users List</h2>
-        <user-form :users="users"></user-form>
+        <user-form :users="users" :user="user"></user-form>
       </div>
       <div class="list__wrapper">
         <user-item
             v-for="(user, index) in users"
-            :key="index"
+            :key="user.id"
             :user="user"
             :index="index"
             @userdelete="remove"
+            @userchange="change"
         ></user-item>
       </div>
+    </div>
+    <div class="lesson">
+
     </div>
   </div>
 </template>
@@ -21,22 +25,27 @@
 <script>
 import UserForm from "@/components/LessonsChapter4/UserForm";
 import UserItem from "@/components/LessonsChapter4/UserItem";
+
 export default {
   name: "TheThird4",
-  components:{UserItem,UserForm},
+  components: {UserItem, UserForm},
   data() {
     return {
-      users:[
+      users: [
         {name: 'Tom', age: 23},
         {name: 'Bob', age: 26},
         {name: 'Alice', age: 28},
         {name: 'Test', age: 32}
-      ]
+      ],
+      user: {}
     }
   },
   methods: {
-    remove(index){
-      this.users.splice(index,1);
+    remove(index) {
+      this.users.splice(index, 1);
+    },
+    change(index) {
+      this.user = this.users[index];
     }
   }
 }
@@ -60,11 +69,13 @@ export default {
   padding: 50px;
   margin: 5px 0;
 }
-.lesson15{
+
+.lesson15 {
   display: flex;
   justify-content: space-around;
 }
-.list__wrapper{
+
+.list__wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,9 +90,11 @@ export default {
   border-radius: 15px;
   background-color: #cccccc;
 }
-.list__wrapper::-webkit-scrollbar-track{
+
+.list__wrapper::-webkit-scrollbar-track {
   width: 5px;
 }
+
 .list__wrapper::-webkit-scrollbar-thumb {
   border-radius: 15px;
   background-color: #818181;
