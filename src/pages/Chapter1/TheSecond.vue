@@ -33,7 +33,16 @@
       <br><br>
       <input type="text" v-model="newHeight">
     </div>
+    <div class="interaction-buttons">
+      <a-button>
+        <router-link to="/">Назад</router-link>
+      </a-button>
+      <a-button>
+        <router-link to="/1.3">К следующей</router-link>
+      </a-button>
+    </div>
   </div>
+
 </template>
 
 <script>

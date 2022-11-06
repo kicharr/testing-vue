@@ -11,7 +11,16 @@
       <h2>{{message}}</h2>
       <button v-on:click="message='Updated'">Update</button>
     </div>
+    <div class="interaction-buttons">
+      <a-button>
+        <router-link to="/">Назад</router-link>
+      </a-button>
+      <a-button>
+        <router-link to="/2.1">К следующей</router-link>
+      </a-button>
+    </div>
   </div>
+
 </template>
 
 <script>

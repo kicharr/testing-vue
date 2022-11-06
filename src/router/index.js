@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from "@/pages/HomePage";
 import LoginPage from "@/pages/SetUser/LoginPage";
 import RegistrationPage from "@/pages/SetUser/RegistrationPage";
-import MainAdminPage from "@/pages/MainAdminPage";
+import BurgerTest from "@/pages/BurgerTest";
 //LEARNING
 import TheFirst from "@/pages/Chapter1/TheFirst"
 import TheSecond from "@/pages/Chapter1/TheSecond";
@@ -39,9 +39,9 @@ const routes = [
 		component: RegistrationPage
 	},
 	{
-		path: '/adminPage',
-		name: 'MainAdminPage',
-		component: MainAdminPage
+		path: '/burger',
+		name: 'BurgerTest',
+		component: BurgerTest
 	},
 	{
 		path: '/1.1',

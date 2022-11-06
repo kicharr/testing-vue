@@ -71,7 +71,14 @@
       <p v-if="test">{{ test.join(" ") }}</p>
       <p>{{ fullName }}</p>
     </div>
-
+    <div class="interaction-buttons">
+      <a-button>
+        <router-link to="/">Назад</router-link>
+      </a-button>
+      <a-button>
+        <router-link to="/1.2">К следующей</router-link>
+      </a-button>
+    </div>
   </div>
 </template>
 
@@ -207,5 +214,10 @@ export default {
 .lesson-4 {
   display: flex;
   justify-content: space-evenly;
+}
+.interaction-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 </style>
