@@ -15,8 +15,8 @@
       <slot-lesson></slot-lesson>
       <slot-lesson>
         <div>
-            <p>Открыт набор на бесплатные курсы Udacity.</p>
-            <p>Заявки принимаются до 16 октября</p>
+          <p>Открыт набор на бесплатные курсы Udacity.</p>
+          <p>Заявки принимаются до 16 октября</p>
         </div>
       </slot-lesson>
     </div>
@@ -30,7 +30,7 @@
           <p>First param</p>
           <p>Second param</p>
         </template>
-        
+
         <template v-slot:footer>
           <p>For more info you should wtite in <span>contacts@gmail.com</span></p>
         </template>
@@ -44,6 +44,55 @@
         </template>
       </second-container>
     </div>
+    <div class="lesson">
+      <header  class="header">
+        <ul style="display: flex">
+          <li><a href="">link</a></li>
+          <li><a href="">link</a></li>
+          <li><a href="">link</a></li>
+          <li><a href="">link</a></li>
+        </ul>
+        <button class="btnModal"
+                @click="showModal"
+        >
+          <img src="@/assets/logo.png" class="vue-icon-btn" alt="photo">
+        </button>
+      </header>
+      <div class="view__modal" v-show="viewModal">
+        <ul style="display: flex">
+          <li style="list-style: none; padding: 0 15px"><a style="color: inherit" >link</a></li>
+          <li style="list-style: none; padding: 0 15px"><a style="color: inherit" href="">link</a></li>
+          <li style="list-style: none; padding: 0 15px"><a style="color: inherit" href="">link</a></li>
+          <li style="list-style: none; padding: 0 15px"><a style="color: inherit" href="">link</a></li>
+        </ul>
+      </div>
+      <p>Lorem ipsum dolor sit
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid deserunt dicta eligendi esse eveniet
+        facilis harum, illum impedit iste non officiis perspiciatis possimus praesentium, quibusdam reprehenderit sequi
+        sunt. Voluptate.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid deserunt dicta eligendi esse eveniet
+        facilis harum, illum impedit iste non officiis perspiciatis possimus praesentium, quibusdam reprehenderit sequi
+        sunt. Voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid deserunt dicta eligendi
+        esse eveniet facilis harum, illum impedit iste non officiis perspiciatis possimus praesentium, quibusdam
+        reprehenderit sequi sunt. Voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid
+        deserunt dicta eligendi esse eveniet facilis harum, illum impedit iste non officiis perspiciatis possimus
+        praesentium, quibusdam reprehenderit sequi sunt. Voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Alias aliquid deserunt dicta eligendi esse eveniet facilis harum, illum impedit iste non officiis
+        perspiciatis possimus praesentium, quibusdam reprehenderit sequi sunt. Voluptate.Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Alias aliquid deserunt dicta eligendi esse eveniet facilis harum, illum impedit
+        iste non officiis perspiciatis possimus praesentium, quibusdam reprehenderit sequi sunt. Voluptate.Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Alias aliquid deserunt dicta eligendi esse eveniet facilis harum,
+        illum impedit iste non officiis perspiciatis possimus praesentium, quibusdam reprehenderit sequi sunt.
+        Voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid deserunt dicta eligendi esse
+        eveniet facilis harum, illum impedit iste non officiis perspiciatis possimus praesentium, quibusdam
+        reprehenderit sequi sunt. Voluptate.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid deserunt dicta eligendi esse eveniet
+        facilis harum, illum impedit iste non officiis perspiciatis possimus praesentium, quibusdam reprehenderit sequi
+        sunt. Voluptate.
+        amet, consectetur adipisicing elit. Alias aliquid deserunt dicta eligendi esse eveniet facilis harum, illum
+        impedit iste non officiis perspiciatis possimus praesentium, quibusdam reprehenderit sequi sunt. Voluptate.
+      </p>
+    </div>
   </div>
 </template>
 
@@ -52,9 +101,10 @@
 import TheLight from "@/components/LessonsChapter4/TheLight";
 import TheEnabled from "@/components/LessonsChapter4/TheEnabled";
 import ChildComponent from "@/components/LessonsChapter5/ChildComponent.vue";
-import SlotLesson from  "@/components/LessonsChapter5/SlotLesson.vue"
-import MainContainer  from "@/components/LessonsChapter5/MainContainer.vue"
+import SlotLesson from "@/components/LessonsChapter5/SlotLesson.vue"
+import MainContainer from "@/components/LessonsChapter5/MainContainer.vue"
 import SecondContainer from "@/components/LessonsChapter5/SecondContainer.vue";
+import logo from "@/assets/logo.png"
 
 
 export default {
@@ -64,9 +114,25 @@ export default {
     ChildComponent,
     SlotLesson,
     MainContainer,
-    SecondContainer
+    SecondContainer,
+    // eslint-disable-next-line vue/no-unused-components
+    logo
   },
   name: "TheFirst5",
+  data() {
+    return {
+      viewModal: false,
+    }
+  },
+  methods: {
+    showModal() {
+      if (this.viewModal == false) {
+        return this.viewModal = true
+      } else {
+        return this.viewModal = false
+      }
+    }
+  }
 }
 </script>
 
@@ -83,5 +149,39 @@ export default {
   border: 1px solid;
   padding: 50px;
   margin: 5px 0;
+}
+
+.btnModal {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+}
+
+.vue-icon-btn {
+  max-width: 30px;
+  width: 100%;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header ul {
+  padding: 0;
+  margin: 0;
+}
+.header li {
+  list-style: none;
+  padding: 0px 15px;
+}
+.header a{
+  color: inherit;
+}
+.view__modal {
+
+  background-color: #999999;
+  padding: 15px;
+  border-radius: 5px;
 }
 </style>

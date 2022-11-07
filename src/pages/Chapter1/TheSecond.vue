@@ -83,6 +83,9 @@ export default {
       this.isBounded = true
     }
   },
+  beforeMount() {
+    scroll(0,0);
+  },
   computed: {
     classObj() {
       return {

@@ -2,10 +2,11 @@
   <div class="wrapper">
     <div class="lesson">
       <SlotUser>
-        <h3>Информация о пользователе:</h3>
-        <p>Имя: {{user.name}}</p>
-        <p>Фамилия: {{user.secondName}}</p>
-        <p>Возраст: {{user.age}}</p>
+        <template v-slot:default="props">
+          <h3>Информация о пользователе:</h3>
+          <p>Имя: {{ props.userinfo.name }}</p>
+          <p>Возраст: {{ props.userinfo.age }}</p>
+        </template>
       </SlotUser>
     </div>
   </div>

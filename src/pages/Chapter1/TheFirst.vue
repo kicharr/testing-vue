@@ -139,6 +139,7 @@ export default {
         this.newSecondName = newNames[newNames.length - 1];
         console.log('newSecondValue')
       }
+
     }
   },
   methods: {
@@ -183,6 +184,9 @@ export default {
       else return "доступ запрещен";
     },
   },
+  beforeMount() {
+    scroll(0,0);
+  }
 }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
     <div warpper>
-        <slot></slot>
+        <slot v-bind:userinfo="user"></slot>
     </div>
 </template>
   
@@ -11,8 +11,7 @@ export default {
         return {
             user: {
                 name: 'Tom',
-                secondName: 'Chirle',
-                age: 19
+                age: 36
             }
         }
     }
