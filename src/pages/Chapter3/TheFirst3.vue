@@ -77,6 +77,19 @@
       <br>
       <span>Выбрано: {{user.name}} - {{user.age}}</span>
     </div>
+    <div class="interaction-buttons">
+      <a-button>
+        <router-link to="/">На главную</router-link>
+      </a-button>
+      <div class="int++">
+        <a-button>
+          <router-link to="/2.2">К предыдущей</router-link>
+        </a-button>
+        <a-button>
+          <router-link to="/3.2">К следующей</router-link>
+        </a-button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -106,6 +119,9 @@ export default {
         {name:'Alice', age:26}
       ],
     }
+  },
+  beforeMount() {
+    scroll(0,0);
   }
 }
 </script>
@@ -132,5 +148,10 @@ export default {
 .form-wrapper {
   display: flex;
   flex-direction: column;
+}
+.interaction-buttons {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
 }
 </style>

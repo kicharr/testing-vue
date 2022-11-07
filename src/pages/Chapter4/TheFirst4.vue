@@ -27,6 +27,19 @@
         <usersList :users="users"></usersList>
       </div>
     </div>
+    <div class="interaction-buttons">
+      <a-button>
+        <router-link to="/">На главную</router-link>
+      </a-button>
+      <div class="int++">
+        <a-button>
+          <router-link to="/3.2">К предыдущей</router-link>
+        </a-button>
+        <a-button>
+          <router-link to="/4.2">К следующей</router-link>
+        </a-button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -94,5 +107,9 @@ export default {
 .lesson14 {
   display: inline-block;
 }
-
+.interaction-buttons {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+}
 </style>

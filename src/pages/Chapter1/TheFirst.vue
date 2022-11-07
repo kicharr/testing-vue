@@ -72,7 +72,7 @@
       <p>{{ fullName }}</p>
     </div>
     <div class="interaction-buttons">
-      <a-button>
+      <a-button style="margin-right: auto">
         <router-link to="/">Назад</router-link>
       </a-button>
       <a-button>
@@ -220,8 +220,8 @@ export default {
   justify-content: space-evenly;
 }
 .interaction-buttons {
-  display: flex;
-  justify-content: space-between;
   width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
 }
 </style>

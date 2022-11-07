@@ -13,11 +13,16 @@
     </div>
     <div class="interaction-buttons">
       <a-button>
-        <router-link to="/">Назад</router-link>
+        <router-link to="/">На главную</router-link>
       </a-button>
-      <a-button>
-        <router-link to="/2.1">К следующей</router-link>
-      </a-button>
+      <div class="int++">
+        <a-button>
+          <router-link to="/1.2">К предыдущей</router-link>
+        </a-button>
+        <a-button>
+          <router-link to="/2.1">К следующей</router-link>
+        </a-button>
+      </div>
     </div>
   </div>
 
@@ -40,6 +45,7 @@ export default {
       this.$refs.userName.innerText = 'Вы ввели новое имя:' + ' ' + this.userName;
     }
   },
+
   beforeCreate() {
     console.log('beforeCreate()');
   },
@@ -48,6 +54,7 @@ export default {
   },
   beforeMount() {
     console.log('beforeMount()');
+    scroll(0,0)
   },
   mounted() {
     console.log('mounted()');
@@ -84,5 +91,10 @@ export default {
   border: 1px solid;
   padding: 50px;
   margin: 5px 0;
+}
+.interaction-buttons {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
 }
 </style>

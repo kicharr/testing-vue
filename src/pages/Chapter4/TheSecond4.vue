@@ -18,6 +18,19 @@
       <h2>Hello, {{secondName}}</h2>
       <UserEdit :name="secondName" v-on:userchange="change"/>
     </div>
+    <div class="interaction-buttons">
+      <a-button>
+        <router-link to="/">На главную</router-link>
+      </a-button>
+      <div class="int++">
+        <a-button>
+          <router-link to="/4.1">К предыдущей</router-link>
+        </a-button>
+        <a-button>
+          <router-link to="/4.3">К следующей</router-link>
+        </a-button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -72,6 +85,11 @@ export default {
 .props__lesson {
   display: flex;
   flex-direction: column;
+}
+.interaction-buttons {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
 }
 </style>
 

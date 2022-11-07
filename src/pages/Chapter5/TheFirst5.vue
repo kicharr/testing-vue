@@ -59,12 +59,7 @@
         </button>
       </header>
       <div class="view__modal" v-show="viewModal">
-        <ul style="display: flex">
-          <li style="list-style: none; padding: 0 15px"><a style="color: inherit" >link</a></li>
-          <li style="list-style: none; padding: 0 15px"><a style="color: inherit" href="">link</a></li>
-          <li style="list-style: none; padding: 0 15px"><a style="color: inherit" href="">link</a></li>
-          <li style="list-style: none; padding: 0 15px"><a style="color: inherit" href="">link</a></li>
-        </ul>
+        <h3 style="text-align: center">MODAL WINDOW</h3>
       </div>
       <p>Lorem ipsum dolor sit
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid deserunt dicta eligendi esse eveniet
@@ -93,7 +88,21 @@
         impedit iste non officiis perspiciatis possimus praesentium, quibusdam reprehenderit sequi sunt. Voluptate.
       </p>
     </div>
+    <div class="interaction-buttons">
+      <a-button>
+        <router-link to="/">На главную</router-link>
+      </a-button>
+      <div class="int++">
+        <a-button>
+          <router-link to="/4.4">К предыдущей</router-link>
+        </a-button>
+        <a-button>
+          <router-link to="/5.2">К следующей</router-link>
+        </a-button>
+      </div>
+    </div>
   </div>
+
 </template>
 
 <script>
@@ -132,6 +141,9 @@ export default {
         return this.viewModal = false
       }
     }
+  },
+  beforeMount() {
+    scroll(0,0)
   }
 }
 </script>
@@ -179,9 +191,16 @@ export default {
   color: inherit;
 }
 .view__modal {
+  position: absolute;
 
+  width: 842px;
   background-color: #999999;
   padding: 15px;
   border-radius: 5px;
+}
+.interaction-buttons {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
 }
 </style>

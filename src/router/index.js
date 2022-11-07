@@ -18,9 +18,11 @@ import TheThird4 from "@/pages/Chapter4/TheThird4";
 import TheFourth4 from "@/pages/Chapter4/TheFourth4";
 import TheFirst5 from "@/pages/Chapter5/TheFirst5";
 import TheSecond5 from "@/pages/Chapter5/TheSecond5";
-
-
-
+import TheFirst6 from "@/pages/Chapter6/TheFirst6";
+import TheSecond6 from "@/pages/Chapter6/TheSecond6";
+import ProductsPage from "@/components/LessonsChapter6/ProductsPage";
+import AboutPage from "@/components/LessonsChapter6/AboutPage";
+import ProductList from "@/pages/Chapter6/ProductList";
 // creating routes to all pages
 const routes = [
 	{
@@ -107,7 +109,33 @@ const routes = [
 		path:'/5.2',
 		name:'5.2',
 		component: TheSecond5
-	}
+	},
+	{
+		path:'/6.1',
+		name:'6.1',
+		component: TheFirst6
+	},
+	{
+		path:'/6.2',
+		name:'6.2',
+		component: TheSecond6
+	},
+   // components for chapter 6
+	{
+		path:'/product/:id',
+		name:'product',
+		component: ProductsPage
+	},
+	{
+		path:'/about',
+		name:'about',
+		component: AboutPage
+	},
+	{
+		path: '/products-list/:category/:id',
+		name:'ProductList',
+		component: ProductList
+	},
 ];
 
 // creating Vue-Router instance with normal history mode

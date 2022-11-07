@@ -35,11 +35,16 @@
     </div>
     <div class="interaction-buttons">
       <a-button>
-        <router-link to="/">Назад</router-link>
+        <router-link to="/">На главную</router-link>
       </a-button>
-      <a-button>
-        <router-link to="/1.3">К следующей</router-link>
-      </a-button>
+      <div class="int++">
+        <a-button>
+          <router-link to="/1.1">К предыдущей</router-link>
+        </a-button>
+        <a-button>
+          <router-link to="/1.3">К следующей</router-link>
+        </a-button>
+      </div>
     </div>
   </div>
 
@@ -180,5 +185,10 @@ export default {
 .small{
   width: 50px;
   height: 50px;
+}
+.interaction-buttons {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
 }
 </style>

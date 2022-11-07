@@ -1,23 +1,47 @@
 <template>
   <div class="wrapper">
+
     <div class="lesson">
-      <SlotUser>
+      <slot-user>
         <template v-slot:default="props">
-          <h3>Информация о пользователе:</h3>
-          <p>Имя: {{ props.userinfo.name }}</p>
-          <p>Возраст: {{ props.userinfo.age }}</p>
+          <h3>User Data</h3>
+          <p>Name: {{props.userinfo.name}}</p>
+          <p>Age: {{props.userinfo.age}}</p>
         </template>
-      </SlotUser>
+      </slot-user>
+    </div>
+    <div class="lesson">
+      <users-list>
+        <template v-slot:userDetails="secondProps">
+          <p>Name: {{secondProps.userinfo.name}}</p>
+          <p>Age: {{secondProps.userinfo.age}}</p>
+        </template>
+      </users-list>
+    </div>
+    <div class="interaction-buttons">
+      <a-button>
+        <router-link to="/">На главную</router-link>
+      </a-button>
+      <div class="int++">
+        <a-button>
+          <router-link to="/5.1">К предыдущей</router-link>
+        </a-button>
+        <a-button>
+          <router-link to="/6.1">К следующей</router-link>
+        </a-button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import SlotUser from '@/components/LessonsChapter5/SlotUser.vue';
+import UsersList from "@/components/LessonsChapter5/UsersList";
 
 export default {
   components: {
-    SlotUser
+    SlotUser,
+    UsersList
   },
   name: "TheSecond5"
 }
@@ -37,5 +61,9 @@ export default {
   padding: 50px;
   margin: 5px 0;
 }
-
+.interaction-buttons {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+}
 </style>

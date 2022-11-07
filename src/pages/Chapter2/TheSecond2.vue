@@ -36,7 +36,19 @@
         </li>
       </ul>
     </div>
-
+    <div class="interaction-buttons">
+      <a-button>
+        <router-link to="/">На главную</router-link>
+      </a-button>
+      <div class="int++">
+        <a-button>
+          <router-link to="/2.1">К предыдущей</router-link>
+        </a-button>
+        <a-button>
+          <router-link to="/3.1">К следующей</router-link>
+        </a-button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -103,6 +115,9 @@ export default {
         else return elem.company.indexOf(comp) > -1;
       })
     },
+  },
+  beforeMount() {
+    scroll(0,0);
   }
 }
 </script>
@@ -123,5 +138,10 @@ export default {
   border: 1px solid;
   padding: 50px;
   margin: 5px 0;
+}
+.interaction-buttons {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
 }
 </style>
