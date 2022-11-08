@@ -27,6 +27,10 @@
         <li><router-link to="/products-list/Samsung/12">Samsung 12</router-link></li>
       </ul>
     </div>
+    <div class="lesson" style="display: flex;flex-direction: column;">
+      <router-link to="/about" class="link">Go to <em>About Page</em></router-link>
+      <router-link to="/wrong-path" class="link">Go to <em>Wrong path</em></router-link>
+    </div>
     <div class="interaction-buttons">
       <a-button>
         <router-link to="/">На главную</router-link>

@@ -22,7 +22,8 @@ import TheFirst6 from "@/pages/Chapter6/TheFirst6";
 import TheSecond6 from "@/pages/Chapter6/TheSecond6";
 import ProductsPage from "@/components/LessonsChapter6/ProductsPage";
 import AboutPage from "@/components/LessonsChapter6/AboutPage";
-import ProductList from "@/pages/Chapter6/ProductList";
+import ProductList from "@/components/LessonsChapter6/ProductList";
+import NotFoundPage from "@/pages/NotFoundPage";
 // creating routes to all pages
 const routes = [
 	{
@@ -136,6 +137,12 @@ const routes = [
 		name:'ProductList',
 		component: ProductList
 	},
+	// PAGE NOT FOUND
+	{
+		path: '/:pathMatch(.*)*',
+		name: 'NotFound',
+		component: NotFoundPage
+	}
 ];
 
 // creating Vue-Router instance with normal history mode

@@ -32,7 +32,7 @@
         </template>
 
         <template v-slot:footer>
-          <p>For more info you should wtite in <span>contacts@gmail.com</span></p>
+          <p>For more info you should write in <span>contacts@gmail.com</span></p>
         </template>
       </main-container>
     </div>
